@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-weight: 400 500;
+  src: url('./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-weight: 400 500;
+  font-style: italic;
+  src: url('./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf');
+}
+
+:root {
+  --primary-500: hsl(256, 67%, 59%);
+  --primary-100: hsl(254, 88%, 90%);
+  --secondary-500: hsl(39, 100%, 71%);
+  --secondary-100: hsl(31, 66%, 93%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 96%);
+  --black: hsl(0, 0%, 7%);
+
+  --fs-par: 1.125rem;
+}
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2 {
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.5;
+  }
+
+  body {
+    background-color: var(--off-white);
+    color: var(--black);
+    font-size: var(--fs-par);
+  }
+
+  h1,
+  h2 {
+    line-height: 1.2;
+  }
+}
+
+@layer layout {
+  .app-wrapper {
+    padding: 2rem;
+  }
+}
