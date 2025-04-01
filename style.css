@@ -12,14 +12,16 @@
 }
 
 :root {
-  --primary-500: hsl(256, 67%, 59%);
-  --primary-100: hsl(254, 88%, 90%);
-  --secondary-500: hsl(39, 100%, 71%);
-  --secondary-100: hsl(31, 66%, 93%);
+  --primary: hsl(256, 67%, 59%);
+  --primary-light: hsl(254, 88%, 90%);
+  --secondary: hsl(39, 100%, 71%);
+  --secondary-light: hsl(31, 66%, 93%);
   --white: hsl(0, 0%, 100%);
   --off-white: hsl(0, 0%, 96%);
   --black: hsl(0, 0%, 7%);
 
+  --fs-lg: 2.75rem;
+  --fs-md: 1.5rem;
   --fs-par: 1.125rem;
 }
 
@@ -58,12 +60,56 @@
 
   h1,
   h2 {
-    line-height: 1.2;
+    color: var(--title-color, inherit);
+    font-size: var(--title-font-size, var(--fs-md));
+    line-height: 1.1;
+
+    .accent {
+      color: var(--title-accent, var(--secondary));
+    }
+
+    .italic {
+      font-style: italic;
+    }
   }
 }
 
 @layer layout {
   .app-wrapper {
     padding: 2rem;
+  }
+
+  .bento-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .bento-grid > * {
+    display: grid;
+    gap: var(--bento-card-gap, 2rem);
+    align-content: var(--bento-card-vertical-alignment, start);
+    justify-items: var(--bento-card-horizontal-alignment, start);
+    text-align: var(--bento-card-horizontal-alignment, start);
+
+    border-radius: var(--bento-card-border-radius, 1.25rem);
+    padding: var(--bento-card-padding, 2rem);
+    background-color: var(--bento-card-bg, var(--white));
+    color: var(--bento-card-color, var(--black));
+  }
+
+  .bento-grid img {
+    max-width: var(--bento-card-img-width, 100%);
+    order: var(--bento-card-img-order);
+  }
+
+  .bento-grid > :nth-child(1) {
+    --title-font-size: var(--fs-lg);
+    --title-accent: var(--secondary);
+    --bento-card-horizontal-alignment: center;
+    --bento-card-gap: 1rem;
+    --bento-card-padding: 3rem;
+    --bento-card-bg: var(--primary);
+    --bento-card-color: var(--white);
+    --bento-card-img-width: 70%;
   }
 }
