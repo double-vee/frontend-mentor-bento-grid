@@ -162,14 +162,8 @@
     grid-area: one;
 
     > img {
-      --bento-card-img-width: 72%;
+      --bento-card-img-width: min(100%, 11rem);
       margin-bottom: -1rem;
-    }
-
-    @media (width > 36rem) {
-      > img {
-        --bento-card-img-width: 42%;
-      }
     }
 
     @media (width > 60rem) {
@@ -188,11 +182,11 @@
 
     @media (width > 36rem) {
       --bento-card-vertical-alignment: center;
+      --bento-card-gap: 1.5rem;
+      --bento-card-padding: 1.5rem;
     }
 
     @media (width > 60rem) {
-      --bento-card-gap: 1.5rem;
-      --bento-card-padding: 1.5rem;
       --title-font-size: var(--fs-lg);
 
       > img {
@@ -208,6 +202,10 @@
     > img {
       --bento-card-img-width: 66%;
       margin-bottom: -2.25rem;
+    }
+
+    @media (width > 36rem) {
+      --bento-card-padding: 1.5rem;
     }
 
     @media (width > 60rem) {
@@ -228,12 +226,14 @@
     grid-area: four;
 
     @media (width > 36rem) {
+      --bento-card-horizontal-alignment: start;
       --bento-card-vertical-alignment: center;
+      --bento-card-gap: 1.5rem;
+      --bento-card-padding: 1.5rem;
+      --bento-card-img-width: 125%;
     }
 
     @media (width > 60rem) {
-      --bento-card-horizontal-alignment: start;
-      --bento-card-gap: 1.5rem;
       --bento-card-padding: 2rem;
       --bento-card-img-width: 185%;
       --title-font-size: var(--fs-lg);
@@ -259,7 +259,6 @@
 
     @media (width > 60rem) {
       --bento-card-gap: 1rem;
-      --bento-card-padding: 1.5rem;
       --title-font-size: var(--fs-lg-desk);
       --title-line-height: var(--lh-title-lg-desk);
       grid-template-columns: 46fr 54fr;
